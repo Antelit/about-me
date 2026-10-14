@@ -1,0 +1,12 @@
+model Project {
+  projectId   Int     @id @default(autoincrement()) @map("project_id")
+  name        String
+  description String
+  url         String?
+  repository  String?
+  profileId   Int   @map("profile_id")
+  profile     Profile @relation(fields: [profileId], references: [profileId], onDelete: Cascade)
+
+  @@map("project")
+  @@index([profileId])
+}

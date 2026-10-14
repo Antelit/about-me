@@ -1,0 +1,9 @@
+model Skill {
+  skillId   Int     @id @default(autoincrement()) @map("skill_id")
+  name      String
+  profileId Int @map("profile_id")
+  profile   Profile @relation(fields: [profileId], references: [profileId], onDelete: Cascade)
+
+  @@index([profileId])
+  @@map("skill")
+}

@@ -1,0 +1,7 @@
+model Seed {
+  seedId       Int      @id @default(autoincrement()) @map("seed_id")
+  createdAt     DateTime @default(now())
+  nameSeed      String   @unique
+
+  @@map("_prisma_seed")
+}

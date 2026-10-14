@@ -1,0 +1,14 @@
+model Profile {
+  profileId   Int       @id @default(autoincrement()) @map("profile_id")
+  firstName   String    @map("first_name")
+  lastName    String    @map("last_name")
+  middleName  String?   @map("middle_name")
+  description String  
+  github      String? 
+  linkedin    String?
+  skills      Skill[]
+  experiences Experience[]
+  projects    Project[]
+
+  @@map("profile")
+}
